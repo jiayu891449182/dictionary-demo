@@ -27,17 +27,6 @@ public class NLPDictionary {
         }
     }
 
-    public static String getProgram(String str){
-        Result rs = DicAnalysis.parse(str);
-        String program_name = "";
-        for (Term t:rs) {
-            if (t.getNatureStr().equals("ny")){
-                program_name = t.getName();
-            }
-        }
-        return program_name;
-    }
-
     private static void updateDic(){
         try{
             BufferedReader br = new BufferedReader(new InputStreamReader(NLPDictionary.class.getResourceAsStream("/dictionary.tsv")));
